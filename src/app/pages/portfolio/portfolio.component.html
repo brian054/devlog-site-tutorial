@@ -1,0 +1,27 @@
+<!-- portfolio.component.html -->
+<h2>My Work</h2>
+<div class="row">
+  <div *ngFor="let project of projects" class="col-md-4 mb-4">
+    <div class="card h-100">
+      <img
+        [src]="project.image"
+        class="card-img-top"
+        alt="{{ project.title }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
+      </div>
+      <div class="card-footer">
+        <a
+          *ngIf="project.link"
+          [href]="project.link"
+          target="_blank"
+          class="btn btn-primary"
+          >View Project</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+

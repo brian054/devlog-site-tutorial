@@ -1,0 +1,51 @@
+<!-- contact.component.html -->
+<h2>Contact Me</h2>
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name*</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      [(ngModel)]="name"
+      name="name"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email*</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      [(ngModel)]="email"
+      name="email"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="subject" class="form-label">Subject</label>
+    <input
+      type="text"
+      id="subject"
+      class="form-control"
+      [(ngModel)]="subject"
+      name="subject"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Message*</label>
+    <textarea
+      id="message"
+      class="form-control"
+      rows="5"
+      [(ngModel)]="message"
+      name="message"
+      required
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">
+    Send Message
+  </button>
+</form>
+
